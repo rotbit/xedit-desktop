@@ -1,0 +1,41 @@
+{
+  "name": "xedit-desktop",
+  "productName": "xEdit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "xEdit Mac 桌面客户端，直连 xedit.me（登录与云端同步）",
+  "author": "rotbit",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "build": {
+    "appId": "me.xedit.desktop",
+    "productName": "xEdit",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "error.html"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.icns",
+      "identity": null,
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^43.1.1",
+    "electron-builder": "^26.15.3"
+  }
+}
