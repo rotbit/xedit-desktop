@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>xEdit</title>
+<style>
+  :root {
+    --paper: #f6f6f5;
+    --paper-glow: #ffffff;
+    --ink: #191919;
+    --ink-faint: #9a9a96;
+    --hairline: #e4e4e2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131313;
+      --paper-glow: #1e1e1e;
+      --ink: #ededed;
+      --ink-faint: #6f6f6f;
+      --hairline: #2c2c2c;
+    }
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: radial-gradient(circle at 50% 38%, var(--paper-glow), var(--paper) 70%);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+    overflow: hidden;
+  }
+  .wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-26px);
+  }
+  .logo {
+    width: 96px;
+    height: 96px;
+    animation: rise 0.55s ease-out both;
+  }
+  .name {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-right: -0.08em;
+    animation: rise 0.55s ease-out 0.12s both;
+  }
+  .bar {
+    width: 112px;
+    height: 2px;
+    margin-top: 26px;
+    border-radius: 2px;
+    background: var(--hairline);
+    overflow: hidden;
+    animation: rise 0.5s ease-out 0.3s both;
+  }
+  .bar::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 100%;
+    border-radius: 2px;
+    background: var(--ink-faint);
+    animation: slide 1.3s cubic-bezier(0.45, 0, 0.35, 1) infinite;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes slide {
+    from { transform: translateX(-110%); }
+    to { transform: translateX(360%); }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="splash-logo.png" alt="" draggable="false" />
+    <div class="name">xEdit</div>
+    <div class="bar"></div>
+  </div>
+</body>
+</html>

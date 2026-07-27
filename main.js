@@ -254,7 +254,8 @@ function buildMenu() {
     {
       label: '文件',
       submenu: [
-        { label: '新建文章', accelerator: 'CmdOrCtrl+N', click: nav('/edit') },
+        // 双屏编辑器已下线：?new=1 让工作台就绪后直接建一篇新稿
+        { label: '新建文章', accelerator: 'CmdOrCtrl+N', click: nav('/?new=1') },
         { label: '回到工作台', accelerator: 'Shift+CmdOrCtrl+H', click: nav('/') },
         { type: 'separator' },
         { label: '切换 GitHub 账号…', click: switchGitHubAccount },

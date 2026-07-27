@@ -18,7 +18,10 @@
     },
     "files": [
       "main.js",
-      "error.html"
+      "preload.js",
+      "error.html",
+      "splash.html",
+      "splash-logo.png"
     ],
     "mac": {
       "category": "public.app-category.productivity",
