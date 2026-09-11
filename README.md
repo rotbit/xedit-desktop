@@ -51,8 +51,8 @@ node node_modules/electron/install.js
 
 ## 图标
 
-启动页使用完整的 xEdit 连字，Dock 与应用图标使用字标中相连的 xE。
-单色字标在启动页跟随系统深浅主题，方形图标使用浅底墨色。
+启动页使用「展页」图标搭配 xEdit 字标，Dock 与应用图标使用独立书页图形。
+浅色启动页使用靛蓝书页与墨色文字，深色启动页使用浅色 Logo；方形图标使用浅底靛蓝。
 
 源文件在网页仓库的 `public/logo.svg` 与 `public/logo-mark.svg`。
 更新源图后，在网页仓库执行以下命令即可同步 SVG、PNG 和完整尺寸的 ICNS：
