@@ -21,7 +21,9 @@
       "preload.js",
       "error.html",
       "splash.html",
-      "splash-logo.png"
+      "splash-logo.png",
+      "splash-logo.svg",
+      "build/dock.png"
     ],
     "mac": {
       "category": "public.app-category.productivity",

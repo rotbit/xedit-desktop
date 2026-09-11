@@ -51,11 +51,17 @@ node node_modules/electron/install.js
 
 ## 图标
 
-`build/icon.icns` 与 `build/dock.png` 由主仓库 `public/mascot/stage-6.png` 生成：
+启动页使用完整的 xEdit 连字，Dock 与应用图标使用字标中相连的 xE。
+单色字标在启动页跟随系统深浅主题，方形图标使用浅底墨色。
+
+源文件在网页仓库的 `public/logo.svg` 与 `public/logo-mark.svg`。
+更新源图后，在网页仓库执行以下命令即可同步 SVG、PNG 和完整尺寸的 ICNS：
 
 ```bash
-mkdir -p build/icon.iconset
-for s in 16 32 128 256 512; do sips -z $s $s stage-6.png --out build/icon.iconset/icon_${s}x${s}.png; done
-for s in 16 32 128 256; do d=$((s*2)); sips -z $d $d stage-6.png --out build/icon.iconset/icon_${s}x${s}@2x.png; done
-iconutil -c icns build/icon.iconset -o build/icon.icns
+cd ../xedit
+node scripts/build-brand-assets.mjs ../xedit-desktop
 ```
+
+生成 `build/icon.icns` 需要 macOS 自带的 `iconutil`。
+`build/dock.png` 和 `splash-logo.svg` 已列入打包文件，`splash-logo.png` 保留同版栅格副本。
+`build/logo-candidates/` 是历史设计草稿，不参与打包。

@@ -38,18 +38,15 @@
     justify-content: center;
     transform: translateY(-26px);
   }
+  /* 使用图片以兼容 loadFile 启动页，按原比例展示完整连字。 */
   .logo {
-    width: 96px;
-    height: 96px;
+    display: block;
+    width: 190px;
+    height: auto;
     animation: rise 0.55s ease-out both;
   }
-  .name {
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    margin-right: -0.08em;
-    animation: rise 0.55s ease-out 0.12s both;
+  @media (prefers-color-scheme: dark) {
+    .logo { filter: brightness(0) invert(1); }
   }
   .bar {
     width: 112px;
@@ -81,8 +78,7 @@
 </head>
 <body>
   <div class="wrap">
-    <img class="logo" src="splash-logo.png" alt="" draggable="false" />
-    <div class="name">xEdit</div>
+    <img class="logo" src="splash-logo.svg" alt="xEdit" draggable="false" />
     <div class="bar"></div>
   </div>
 </body>
