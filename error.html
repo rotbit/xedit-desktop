@@ -14,6 +14,15 @@
     color: #37352f;
     font-family: -apple-system, "PingFang SC", sans-serif;
   }
+  /* 系统标题栏已隐藏，本地页面自己留一条顶部拖拽区，否则窗口拖不动 */
+  .titlebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    -webkit-app-region: drag;
+  }
   .box { text-align: center; }
   h1 { font-size: 18px; font-weight: 600; margin: 0 0 8px; }
   p { font-size: 13px; color: #9b9a97; margin: 0 0 24px; }
@@ -30,6 +39,7 @@
 </style>
 </head>
 <body>
+  <div class="titlebar"></div>
   <div class="box">
     <h1>无法连接到 xEdit</h1>
     <p>请检查网络后重试</p>

@@ -30,6 +30,15 @@
     user-select: none;
     overflow: hidden;
   }
+  /* 系统标题栏已隐藏，本地页面自己留一条顶部拖拽区，否则窗口拖不动 */
+  .titlebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    -webkit-app-region: drag;
+  }
   .wrap {
     height: 100%;
     display: flex;
@@ -77,6 +86,7 @@
 </style>
 </head>
 <body>
+  <div class="titlebar"></div>
   <div class="wrap">
     <img class="logo" src="splash-logo.svg" alt="xEdit" draggable="false" />
     <div class="bar"></div>

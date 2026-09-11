@@ -168,6 +168,9 @@ function createWindow() {
     height: state.height,
     minWidth: 960,
     minHeight: 600,
+    // 隐藏系统标题栏，红绿灯嵌进网页 48px 顶栏（网页端按 html.desktop-mac 留位）
+    titleBarStyle: 'hiddenInset',
+    trafficLightPosition: { x: 16, y: 18 },
     // 底色跟随系统深浅色，避免创建瞬间闪白/闪黑
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#161616' : '#fafafa',
     webPreferences: {

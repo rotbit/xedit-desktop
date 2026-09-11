@@ -2,7 +2,14 @@
 // localDocs 的存储格式播种一篇欢迎文档，首页据此直接进入本地工作台而非登录页。
 // 是否已登录由主进程读会话 cookie 判断（httpOnly，这里读不到）。
 // 存储格式与欢迎文案须与 xedit 仓库 src/lib/localDocs.ts、src/store/useStore.ts 保持一致。
-const { ipcRenderer } = require('electron')
+const { contextBridge, ipcRenderer } = require('electron')
+
+// 告诉网页自己跑在桌面壳里：网页据此给红绿灯留位、把顶栏设为可拖拽区域
+contextBridge.exposeInMainWorld('xeditDesktop', { platform: process.platform })
+// documentElement 在 preload 执行时还不存在，必须等 DOM 就绪再打标记
+window.addEventListener('DOMContentLoaded', () => {
+  if (process.platform === 'darwin') document.documentElement.classList.add('desktop-mac')
+})
 
 const INDEX_KEY = 'xedit-local-docs'
 const DOC_PREFIX = 'xedit-local-doc:'
