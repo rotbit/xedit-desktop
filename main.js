@@ -261,6 +261,11 @@ function buildMenu() {
         { label: '新建文章', accelerator: 'CmdOrCtrl+N', click: nav('/?new=1') },
         { label: '回到工作台', accelerator: 'Shift+CmdOrCtrl+H', click: nav('/') },
         { type: 'separator' },
+        // 导入 / 飞书都靠 ?action= 让网页打开对应弹窗；选文件必须由用户在页面里再点一下（浏览器要求用户手势）
+        { label: '导入 Markdown 文件…', click: nav('/?action=import-file') },
+        { label: '导入文件夹…', click: nav('/?action=import-folder') },
+        { label: '飞书知识库导入…', click: nav('/?action=feishu') },
+        { type: 'separator' },
         { label: '切换 GitHub 账号…', click: switchGitHubAccount },
         { type: 'separator' },
         { role: 'close', label: '关闭窗口' },
